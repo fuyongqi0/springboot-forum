@@ -96,6 +96,7 @@ public class DashboardController {
 		if (null == postId) {
 			throw new BadRequestException("Path variable postId cound not be null.");
 		}
+
 		int rowAffected = this.postService.deletePostAndComments(postId);
 		logger.info("Deleted postId = " + postId + " ; rowAffected = " + rowAffected);
 		if (0 == rowAffected) {
